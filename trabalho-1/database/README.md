@@ -1,5 +1,9 @@
 # Database
 
+## Artefatos
+
+- [Backup][backup-link]
+
 ## Realizar backup
 
 ```bash
@@ -27,3 +31,7 @@ docker exec -it elc137_t1_database sh
 
 mongorestore --nsInclude 'elc137t1db.*' --username root --password root --drop ./data/db/backups/
 ```
+
+<!-- Links -->
+
+[backup-link]: <https://drive.google.com/drive/folders/1xLdWh5HWdyORVx7XtA88LuZIwY4sIc9l> "Backup"

@@ -1,1 +1,3 @@
 .docker/
+database/backups/
+dataset/dataset.csv
