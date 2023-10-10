@@ -1,0 +1,18 @@
+services:
+  elc137-t1-database:
+    container_name: elc137_t1_database
+    image: mongo:7.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: elc137t1db
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./.docker/elc137-t1-database:/data/db
+    networks:
+      - elc137-t1-network
+networks:
+  elc137-t1-network:
+    name: elc137_t1_network
+    driver: bridge

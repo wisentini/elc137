@@ -1,0 +1,2 @@
+trabalho-1/database/backups/elc137t1db/sales.bson filter=lfs diff=lfs merge=lfs -text
+trabalho-1/dataset/dataset.csv filter=lfs diff=lfs merge=lfs -text
