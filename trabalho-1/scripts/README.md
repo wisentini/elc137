@@ -3,18 +3,18 @@
 ## Setup
 
 ```bash
-# cria um ambiente virtual
+# Cria um ambiente virtual
 python -m venv venv
 
-# acessa o ambiente virtual (linux)
+# Acessa o ambiente virtual (Linux)
 source venv/bin/activate
 
-# acessa o ambiente virtual (windows)
+# Acessa o ambiente virtual (Windows)
 .\venv\Scripts\activate
 
-# atualiza o gerenciador de pacotes do python
+# Atualiza o gerenciador de pacotes do Python
 python -m pip install --upgrade pip
 
-# instala as dependências necessárias
+# Instala as dependências necessárias
 pip install -r requirements.txt
 ```
