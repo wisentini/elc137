@@ -1,37 +1,27 @@
 # Database
 
-## Artefatos
-
-- [Backup][backup-link]
-
-## Realizar backup
-
 ```bash
-docker exec -it elc137_t1_database sh
+docker exec -it elc137_t1_database_1 sh
 
-mongodump --uri="mongodb://root:root@localhost:27017/elc137t1db?authSource=admin&readPreference=primary" --collection="sales" --out="./data/db/backups"
+mongodump --uri="mongodb://127.0.10.1:27017/elc137t1db" --collection="sales" --out="./data/db/backups"
 
-# transferir backups (Administrator: Windows PowerShell)
-robocopy ..\.docker\elc137-t1-database\backups .\backups /e /j /copyall /dcopy:date /is /it /im
+# transferir backups (Administrador: Windows PowerShell)
+robocopy ..\.docker\elc137-t1-database-1\backups .\backups /e /j /copyall /dcopy:date /is /it /im
 
 # transferir backups (Linux)
-cp -r ../.docker/elc137-t1-database/backups ./backups
+cp -r ../.docker/elc137-t1-database-1/backups ./backups
 
-# excluir backups temporários (Administrator: Windows PowerShell)
-Remove-Item -Recurse -Confirm:$false ..\.docker\elc137-t1-database\backups
+# excluir backups temporários (Administrador: Windows PowerShell)
+Remove-Item -Recurse -Confirm:$false ..\.docker\elc137-t1-database-1\backups
 
 # excluir backups temporários (Linux)
-rm -rf ../.docker/elc137-t1-database/backups
+rm -rf ../.docker/elc137-t1-database-1/backups
 ```
 
 ## Restaurar backup
 
 ```bash
-docker exec -it elc137_t1_database sh
+docker exec -it elc137_t1_database_1 sh
 
-mongorestore --nsInclude 'elc137t1db.*' --username root --password root --drop ./data/db/backups/
+mongorestore --nsInclude="elc137t1db.*" --drop ./data/db/backups/
 ```
-
-<!-- Links -->
-
-[backup-link]: <https://drive.google.com/drive/folders/1xLdWh5HWdyORVx7XtA88LuZIwY4sIc9l> "Backup"

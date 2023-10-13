@@ -15,12 +15,9 @@
 PORT=3000
 
 # Database
-DB_HOST=localhost
-DB_PORT=27017
-DB_USER=root
-DB_PASS=root
 DB_NAME=elc137t1db
-DB_CON_URI=mongodb://localhost:27017
+DB_CON_URI=mongodb://127.0.10.1:27017,127.0.10.2:27017,127.0.10.3:27017
+DB_REPLICA_SET=elc137-t1-database-replica-set
 ```
 
 ## Execução

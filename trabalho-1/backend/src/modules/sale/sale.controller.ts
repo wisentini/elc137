@@ -22,6 +22,14 @@ export const findSales = catchAsync(async (request: Request, response: Response)
   response.status(StatusCodes.OK).send(sales);
 });
 
+export const findSaleByInvoiceNumber = catchAsync(async (request: Request, response: Response) => {
+  const { invoiceNumber } = request.params;
+
+  const sale = await saleService.findSaleByInvoiceNumber(invoiceNumber);
+
+  response.status(StatusCodes.OK).send(sale);
+});
+
 export const saveSale = catchAsync(async (request: Request, response: Response) => {
   const sale = await saleService.saveSale(request.body);
 

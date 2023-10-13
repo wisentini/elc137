@@ -6,12 +6,9 @@ type ServerConfig = {
 }
 
 type DatabaseConfig = {
-  host: string;
-  port: number;
-  user: string;
-  pass: string;
   name: string;
   connectionURI: string;
+  replicaSet: string;
 }
 
 type Config = {
@@ -25,11 +22,8 @@ export default {
     port: Number(process.env.PORT)
   },
   database: {
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    user: process.env.DB_USER,
-    pass: process.env.DB_PASS,
     name: process.env.DB_NAME,
-    connectionURI: process.env.DB_CON_URI
+    connectionURI: process.env.DB_CON_URI,
+    replicaSet: process.env.DB_REPLICA_SET
   }
 } as Config;

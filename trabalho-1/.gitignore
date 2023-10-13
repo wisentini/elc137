@@ -1,3 +1,4 @@
 .docker/
 database/backups/
+database/README.md
 dataset/dataset.csv

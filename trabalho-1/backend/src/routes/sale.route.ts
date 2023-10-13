@@ -14,8 +14,9 @@ saleRouter
 
 saleRouter
   .route('/:invoiceNumber')
-  .delete(saleController.deleteSaleByInvoiceNumber)
-  .patch(saleController.updateSaleByInvoiceNumber);
+  .get(saleController.findSaleByInvoiceNumber)
+  .patch(saleController.updateSaleByInvoiceNumber)
+  .delete(saleController.deleteSaleByInvoiceNumber);
 
 saleRouter
   .route('/report')
