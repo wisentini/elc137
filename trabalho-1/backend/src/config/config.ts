@@ -55,9 +55,7 @@ const composeConnectionURI = (): string => {
   const databaseName = process.env.DB_NAME;
   const replicaSetName = process.env.DB_REPLICA_SET_NAME;
 
-  const a = `mongodb://${selectedHostsAndPorts.join(',')}/${databaseName}?replicaSet=${replicaSetName}`;
-  console.log(a);
-  return a;
+  return `mongodb://${selectedHostsAndPorts.join(',')}/${databaseName}?replicaSet=${replicaSetName}`;
 };
 
 export default {
