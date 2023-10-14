@@ -7,7 +7,7 @@ import app from './app';
 let server: any;
 
 mongoose
-  .connect(config.database.connectionURI, { dbName: config.database.name })
+  .connect(config.database.connectionURI)
   .then(() => {
     server = app.listen(config.server.port);
   });
