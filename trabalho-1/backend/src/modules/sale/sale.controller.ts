@@ -15,6 +15,7 @@ const FILTER_FIELDS = [
 
 export const findSales = catchAsync(async (request: Request, response: Response) => {
   const filter = pick(request.query, FILTER_FIELDS);
+
   const options: IOptions = pick(request.query, ['sortBy', 'limit', 'page', 'projectBy']);
 
   const sales = await saleService.findSales(filter, options);
@@ -51,12 +52,4 @@ export const updateSaleByInvoiceNumber = catchAsync(async (request: Request, res
   const sale = await saleService.updateSaleByInvoiceNumber(invoiceNumber, bottlesSold);
 
   response.status(StatusCodes.OK).send(sale);
-});
-
-export const generateReport = catchAsync(async (request: Request, response: Response) => {
-  const filter = pick(request.query, ['startDate', 'endDate']);
-  
-  const report = await saleService.generateReport(filter);
-
-  response.status(StatusCodes.OK).send(report);
 });

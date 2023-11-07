@@ -35,10 +35,3 @@ export interface ISaleDocument extends ISale, Document {
 export interface ISaleModel extends Model<ISaleDocument> {
   paginate(filter: Record<string, any>, options: Record<string, any>): Promise<QueryResult>;
 }
-
-export type TSaleReport = {
-  startDate: string;
-  endDate: string;
-  bottlesSold: number;
-  saleDollars: number;
-};
