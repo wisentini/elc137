@@ -1,0 +1,38 @@
+services:
+  elc137-t1-database-1:
+    container_name: elc137_t1_database_1
+    image: mongo:7.0
+    restart: on-failure
+    ports:
+      - '127.0.10.1:27017:27017'
+    volumes:
+      - ./.docker/elc137-t1-database-1:/data/db
+    entrypoint: ['/usr/bin/mongod', '--bind_ip_all', '--replSet', 'elc137-t1-database-replica-set']
+    networks:
+      - elc137-t1-network
+  elc137-t1-database-2:
+    container_name: elc137_t1_database_2
+    image: mongo:7.0
+    restart: on-failure
+    ports:
+      - '127.0.10.2:27017:27017'
+    volumes:
+      - ./.docker/elc137-t1-database-2:/data/db
+    entrypoint: ['/usr/bin/mongod', '--bind_ip_all', '--replSet', 'elc137-t1-database-replica-set']
+    networks:
+      - elc137-t1-network
+  elc137-t1-database-3:
+    container_name: elc137_t1_database_3
+    image: mongo:7.0
+    restart: on-failure
+    ports:
+      - '127.0.10.3:27017:27017'
+    volumes:
+      - ./.docker/elc137-t1-database-3:/data/db
+    entrypoint: ['/usr/bin/mongod', '--bind_ip_all', '--replSet', 'elc137-t1-database-replica-set']
+    networks:
+      - elc137-t1-network
+networks:
+  elc137-t1-network:
+    name: elc137_t1_network
+    driver: bridge
