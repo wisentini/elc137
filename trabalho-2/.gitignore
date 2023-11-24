@@ -1,3 +1,4 @@
+.vscode/
 .docker/
 database/backups/
 database/README.md

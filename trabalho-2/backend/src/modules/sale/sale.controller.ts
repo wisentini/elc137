@@ -5,6 +5,7 @@ import * as saleService from './sale.service';
 import { IOptions } from '../paginate/paginate';
 import catchAsync from '../utils/catchAsync';
 import pick from '../utils/pick';
+import config from 'config/config';
 
 const FILTER_FIELDS = [
   'invoiceNumber', 'date', 'storeNumber', 'storeName', 'address', 'city', 'zipCode',
@@ -20,7 +21,12 @@ export const findSales = catchAsync(async (request: Request, response: Response)
 
   const sales = await saleService.findSales(filter, options);
 
-  response.status(StatusCodes.OK).send(sales);
+  response
+    .status(StatusCodes.OK)
+    .send({
+      serverIP: config.server.ip,
+      data: sales
+    });
 });
 
 export const findSaleByInvoiceNumber = catchAsync(async (request: Request, response: Response) => {
@@ -28,13 +34,23 @@ export const findSaleByInvoiceNumber = catchAsync(async (request: Request, respo
 
   const sale = await saleService.findSaleByInvoiceNumber(invoiceNumber);
 
-  response.status(StatusCodes.OK).send(sale);
+  response
+    .status(StatusCodes.OK)
+    .send({
+      serverIP: config.server.ip,
+      data: sale
+    });
 });
 
 export const saveSale = catchAsync(async (request: Request, response: Response) => {
   const sale = await saleService.saveSale(request.body);
 
-  response.status(StatusCodes.CREATED).send(sale);
+  response
+    .status(StatusCodes.CREATED)
+    .send({
+      serverIP: config.server.ip,
+      data: sale
+    });
 });
 
 export const deleteSaleByInvoiceNumber = catchAsync(async (request: Request, response: Response) => {
@@ -42,7 +58,11 @@ export const deleteSaleByInvoiceNumber = catchAsync(async (request: Request, res
 
   await saleService.deleteSaleByInvoiceNumber(invoiceNumber);
 
-  response.status(StatusCodes.NO_CONTENT).send();
+  response
+    .status(StatusCodes.NO_CONTENT)
+    .send({
+      serverIP: config.server.ip
+    });
 });
 
 export const updateSaleByInvoiceNumber = catchAsync(async (request: Request, response: Response) => {
@@ -51,5 +71,10 @@ export const updateSaleByInvoiceNumber = catchAsync(async (request: Request, res
 
   const sale = await saleService.updateSaleByInvoiceNumber(invoiceNumber, bottlesSold);
 
-  response.status(StatusCodes.OK).send(sale);
+  response
+    .status(StatusCodes.OK)
+    .send({
+      serverIP: config.server.ip,
+      data: sale
+    });
 });
