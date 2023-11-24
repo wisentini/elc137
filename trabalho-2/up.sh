@@ -4,7 +4,7 @@ docker compose down
 
 docker volume prune -f
 
-rm -rf ./.docker
+sudo rm -rf ./.docker
 
 docker compose up -d
 
