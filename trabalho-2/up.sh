@@ -4,6 +4,10 @@ docker compose down
 
 docker volume prune -f
 
+docker stop $(docker ps -a -q)
+
+docker rm -f $(docker ps -a -q)
+
 sudo rm -rf ./.docker
 
 docker compose up -d
