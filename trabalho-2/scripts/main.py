@@ -14,7 +14,7 @@ FIELD_NAMES = [
     'stateBottleRetail', 'bottlesSold', 'saleDollars', 'volumeSoldLiters', 'volumeSoldGallons'
 ]
 
-DATABASE_NAME = 'elc137t1db'
+DATABASE_NAME = 'elc137t2db'
 
 COLLECTION_NAME = '2021IowaLiquorSales'
 

@@ -1,4 +1,4 @@
-# Trabalho 1
+# Trabalho 2
 
 ## Dataset
 
@@ -25,12 +25,12 @@
 2. Instale o [Apache JMeter][apache-jmeter-link]
 3. Instale o [Docker Desktop][docker-desktop-link]
 4. Execute o script [`up.ps1`][script-link] como administrador
-5. Faça o download dos [arquivos de backup][backup-link] e coloque-os em `./database/backups/elc137t1db/`
+5. Faça o download dos [arquivos de backup][backup-link] e coloque-os em `./database/backups/elc137t2db/`
 6. Através do Studio 3T, conecte-se ao MongoDB pela URI `mongodb://127.0.10.1:27017,127.0.10.2:27017,127.0.10.3:27017`
    1. Acesse o menu `Import > BSON - mongodump folder`
       1. Em `Source folder`, selecione o diretório de backups `./database/backups/`
       2. Em `Target connection`, selecione a conexão realizada ao MongoDB no passo 4
-      3. Em `Import sources`, selecione o banco de dados `elc137t1db` e a coleção `sales`
+      3. Em `Import sources`, selecione o banco de dados `elc137t2db` e a coleção `sales`
       4. Em `BSON options`, marque a opção `Drop collection before import (--drop)`
       5. Execute o comando `Run`
 
