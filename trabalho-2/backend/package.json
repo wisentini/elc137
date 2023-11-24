@@ -6,7 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "build": "tsc",
-    "start": "nodemon"
+    "start": "nodemon",
+    "deploy": "npm install && npm run build && pm2 start build/index.js --watch build/"
   },
   "keywords": [],
   "author": "",
