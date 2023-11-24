@@ -5,7 +5,7 @@ import * as saleService from './sale.service';
 import { IOptions } from '../paginate/paginate';
 import catchAsync from '../utils/catchAsync';
 import pick from '../utils/pick';
-import config from 'config/config';
+import config from '../../config/config';
 
 const FILTER_FIELDS = [
   'invoiceNumber', 'date', 'storeNumber', 'storeName', 'address', 'city', 'zipCode',
