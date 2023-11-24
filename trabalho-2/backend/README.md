@@ -12,6 +12,7 @@
 
 ```bash
 # Server
+IP=172.16.1.124
 PORT=3000
 
 # Database

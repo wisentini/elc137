@@ -2,6 +2,7 @@ import 'dotenv/config';
 
 type ServerConfig = {
   env: string;
+  ip: string;
   port: number;
 }
 
@@ -61,6 +62,7 @@ const composeConnectionURI = (): string => {
 export default {
   server: {
     env: process.env.NODE_ENV,
+    ip: process.env.IP,
     port: Number(process.env.PORT)
   },
   database: {
