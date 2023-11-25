@@ -18,11 +18,7 @@ const makeRequest = (httpMethod, url, body, cardNumber) => {
     if (xhr.readyState !== 4) return;
     
     if (xhr.status >= 200 && xhr.status < 400) {
-      if (httpMethod === 'DELETE') {
-        responseCardResponseTextAreaValue = 'Venda deletada com sucesso!';
-      } else {
-        responseCardResponseTextAreaValue = JSON.stringify(JSON.parse(xhr.response), false, 2);
-      }
+      responseCardResponseTextAreaValue = JSON.stringify(JSON.parse(xhr.response), false, 2);
     } else {
       responseCardResponseTextAreaValue = `Erro: ${xhr.statusText}`;
     }
