@@ -20,7 +20,7 @@ export const saveSale = async (sale: ISale): Promise<ISaleDocument> => {
 };
 
 export const deleteSaleByInvoiceNumber = async (invoiceNumber: string): Promise<void> => {
-  await Sale.deleteOne({
+  await Sale.deleteMany({
     invoiceNumber: {
       $regex: invoiceNumber,
       $options: 'i'
