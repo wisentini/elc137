@@ -21,6 +21,7 @@ body {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 15px;
   max-width: 500px;
   padding: 25px;

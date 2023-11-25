@@ -62,7 +62,7 @@ export const deleteSaleByInvoiceNumber = catchAsync(async (request: Request, res
     .status(StatusCodes.OK)
     .send({
       serverIP: config.server.ip,
-      data: "Venda deletada com sucesso!"
+      data: 'Venda deletada com sucesso!'
     });
 });
 
